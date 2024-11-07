@@ -1,0 +1,260 @@
+<!DOCTYPE html>  
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación Interactiva - Proyecto de Programación de Software</title>
+    <style>
+        /* Estilos generales */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background-image: url(https://i.pinimg.com/originals/21/9a/09/219a09d5c2d9e50e4c2d20c9a03e09af.gif);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .barra-lateral {
+            width: 250px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .barra-lateral h2 {
+            color: yellow;
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        .barra-lateral ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .barra-lateral ul li {
+            margin: 10px 0;
+        }
+
+        .barra-lateral ul li a {
+            color:blue;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .barra-lateral ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contenedor principal para las diapositivas */
+        .diapositiva {
+         display: none;
+        padding: 20px;
+        width: 80%;
+        max-width: 800px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.75);
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        opacity: 0;
+        border: 5px solid blue; /* Color y grosor del borde */
+}
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Diapositiva activa */
+        .diapositiva.activa {
+            display: block;
+            opacity: 1;
+        }
+
+        .diapositiva.siguiente {
+            transform: translateX(100%);
+        }
+
+        .diapositiva.anterior {
+            transform: translateX(-100%);
+        }
+
+        /* Efecto de escala en los botones de navegación */
+        .navegacion button {
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navegacion button:hover {
+            background-color:blue;
+            transform: scale(1.5);
+        }
+
+        .flecha {
+    font-size: 1.5rem;
+    line-height: 1;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color:blue; /* Azul claro para el fondo de las flechas */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Hacer que las flechas tengan forma circular */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.flecha:hover {
+    background-color: #0b63a4; /* Azul más oscuro para el efecto hover */
+}
+    </style>
+</head>
+<body>
+    <div class="barra-lateral">
+        <h2>Índice de Contenido</h2>
+        <ul>
+            <li><a href="#diapositiva1" onclick="mostrarDiapositiva(1)">Introducción</a></li>
+            <li><a href="#diapositiva1" onclick="mostrarDiapositiva(2)">Que es la programación</a></li>
+            <li><a href="#diapositiva2" onclick="mostrarDiapositiva(3)">Problematización y Delimitación</a></li>
+            <li><a href="#diapositiva3" onclick="mostrarDiapositiva(4)">Objetivos</a></li>
+            <li><a href="#diapositiva4" onclick="mostrarDiapositiva(5)">Justificación</a></li>
+            <li><a href="#diapositiva5" onclick="mostrarDiapositiva(6)">Enfoque o métodos</a></li>
+            <li><a href="#diapositiva6" onclick="mostrarDiapositiva(7)">Hipótesis</a></li>
+            <li><a href="#diapositiva7" onclick="mostrarDiapositiva(8)">Conclusión y Aportación</a></li>
+        </ul>
+    </div>
+
+    <!--apositivas de la presentación -->
+    <div class="diapositiva activa" id="diapositiva0">
+        <h1>Programación de Software: Un desarrollo de habilidades</h1>
+        <p>Samuel Antonio Niño Cárdenas - Grado 10</p>
+        <p>Docente: Diego Orlando López</p>
+    </div>
+<div class="diapositiva" id="diapositiva1">
+        <h2>Introducción</h2>
+        <p>La programación se ha convertido en un campo de gran crecimiento y alta demanda debido a la digitalización en diversas industrias. Hoy en día, áreas como el desarrollo de aplicaciones, inteligencia artificial, ciberseguridad y análisis de datos requieren expertos bien preparados. Sin embargo, existe una brecha entre el conocimiento teórico que se adquiere en las instituciones académicas y las habilidades necesarias en el mercado laboral. Este proyecto busca analizar las perspectivas profesionales en el desarrollo de software, las necesidades educativas y laborales en Colombia, y cómo la colaboración entre instituciones y empresas puede mejorar la preparación de los futuros profesionales.</p>
+        <img src="https://i.pinimg.com/originals/6b/b6/5b/6bb65b184f4b26a7897cd989d42d3811.gif" alt="Logo " width="200" height="200"  style="border-radius: 50%">
+        <img src="https://i.pinimg.com/originals/09/b5/b7/09b5b738ef2459097c2641ddcd0c4478.gif" alt="Logo " width="200" height="200"  style="border-radius: 50%">
+        <img src="https://i.pinimg.com/474x/89/9e/64/899e643a3449c46476b3c115d5ed2bd0.jpg" alt="Logo " width="200" height="200"  style="border-radius: 50%">
+</div>
+    <div class="diapositiva activa" id="diapositiva0">
+        <h2>Qué es la programación</h2>
+        <p>Programación es la acción de programar que implica ordenar, estructurar o componer una serie de acciones cronológicas para cumplir un objetivo</p>
+      <img src="https://cdn.goconqr.com/uploads/node/image/93823910/desktop_05c0fc18-d8d5-4071-a74b-ac6f85bd6afc.png" alt="Logo " width="200" height="200"  style="border-radius: 50%">
+          <img src="https://th.bing.com/th/id/R.6ee8ee4947aa59cbd2aad4f2b372bd23?rik=nSo4Y37Z39GuVA&pid=ImgRaw&r=0" alt="Logo " width="200" height="200"  style="border-radius: 35%">
+      
+    </div>
+
+    <div class="diapositiva" id="diapositiva2">
+        <h2>Problematización y Delimitación</h2>
+        <h3>Problemática</h3>
+        <p>La demanda de profesionales en ingeniería y tecnología está creciendo, pero existe una brecha entre la formación académica y las necesidades del mercado laboral. Los programas educativos suelen centrarse en la teoría, mientras que la industria requiere habilidades prácticas y actualización constante en tecnología. La colaboración entre universidades y empresas es crucial para ajustar los planes de estudio, incorporar prácticas reales y asegurar que los estudiantes estén preparados para enfrentar los retos de un mercado en constante cambio.</p>
+        <h3>Delimitación</h3>
+        <p>Este proyecto analiza la carrera de Programación de Software en Colombia, enfocándose en las habilidades, oportunidades educativas y el mercado laboral en Chía y Bogotá. Se estudian lenguajes y frameworks como Python, JavaScript, Django y React, aplicados en sectores como educación y salud, para mejorar procesos y desarrollar soluciones locales. También se evalúan las demandas globales del mercado para identificar competencias clave y desafíos en el ámbito profesional colombiano.</p>
+    </div>
+
+    <div class="diapositiva" id="diapositiva3">
+        <h2>Objetivos</h2>
+        <strong>Objetivo General:</strong> Analizar la carrera de Programación de Software para identificar las habilidades necesarias, las oportunidades académicas y profesionales en Colombia, y evaluar su viabilidad como una opción para mi proyecto de vida<ul>
+          <strong>Objetivo Especificos</strong>
+           <li>Identificar las competencias técnicas, habilidades y prácticas que se ven en la ingeniera.</li>
+            <li>Analizar las oportunidades laborales actuales y futuras en el sector de Programación de Software.</li>
+            <li>Evaluar la relación entre la Programación de Software y otras disciplinas tecnológicas.</li>
+            <li>Investigar las principales instituciones educativas y programas académicos en Colombia.</li>
+            <li>Establecer un plan de desarrollo personal y profesional</li>
+            <!-- Más objetivos aquí -->
+        </ul>
+    </div>
+
+    <div class="diapositiva" id="diapositiva4">
+        <h2>Justificación</h2>
+        <p><strong>Interés:</strong> Desde temprana edad me ha gustado la matemática, con la fascinación de esta materia el colegio me ha dado una oportunidad entrando a un grupo de robótica centrándome en la programación, esto aumento mi amor por la programación </p>
+        <p><strong>Pertinencia:</strong>Es pertinente esta carrera por que me ayuda a desarrollar mis habilidades y a mejorar en la parte de lógica matemática </p>
+        <p><strong>Significancia:</strong> La programación de software es de mi elección para el crecimiento profesional, teniendo en cuenta que con la tecnología cada vez mas grande y con más dependencia de los sistemas garantizando la innovación constante. La programación es esencial en el desarrollo de aplicaciones, plataformas y soluciones tecnológicas que soportan un procesos en una variedad de industrias, educación, comercio y entretenimiento. No sólo ayuda a estar a pendiente de la  innovación y nuevas tecnologías, sino que también la programación tiene el potencial de crear herramientas que pueden mejorar la calidad de vida de las personas y optimizar los recursos en un mundo digital.</p>
+        <p><strong>Viabilidad:</strong>Aprender a codificar no sólo es bueno para las oportunidades laborales y los altos salarios, sino también para el impacto social, el aprendizaje permanente y el potencial de desarrollo profesional que juegan un papel fundamental en el futuro digital.</p>
+<!-- Más contenido aquí -->
+    </div>      
+<div class="diapositiva" id="diapositiva5">
+    <h2>Enfoque o Método</h2>
+        <p><strong>Metodologia Mixta</strong>Para llevar a cabo esta investigación, se utilizará una metodología mixta que incluye tanto técnicas cualitativas como cuantitativas. Para obtener una comprensión más profunda de los desafíos y mejores prácticas. Además, se llevará a cabo un análisis de casos de estudio de proyectos de software exitosos y fallidos para identificar los factores clave que contribuyen al éxito o fracaso de estos proyectos. Las herramientas de software como se utilizarán para el análisis de datos y la modelización de sistemas.
+</p>
+</div>
+<div class="diapositiva" id="diapositiva6">
+    <!-- Hipótesis -->
+        <h2>Hipótesis</h2>
+        <p>Desarrollar competencias avanzadas en programación, como dominio en Python y JavaScript, metodologías Agile y DevOps, y conocimientos en ciberseguridad y arquitectura de software, me permitirá construir una carrera sólida en el campo. Con una formación académica de calidad en Colombia, estaré preparado para satisfacer las demandas del mercado y crear soluciones innovadoras en sectores como educación, salud y negocios. Además, podré contribuir al avance tecnológico y la transformación digital en el contexto colombiano, generando un impacto positivo en la sociedad.</p>
+   
+</div>
+<div class="diapositiva" id="diapositiva7">
+    <!-- Conclusión y aportación -->
+  
+        <h2>Conclusión y Aportación de la Investigación</h2>
+        <p><strong>Conclusión:</strong>Un estudio sobre carreras de programación en Colombia identificó competencias clave como el conocimiento de lenguajes como Python y JavaScript y metodologías Agile y DevOps. Se enfatizó la importancia de una formación integral que combine habilidades técnicas y blandas, adaptándose a las necesidades de los mercados laborales de Chía y Bogotá.</p>
+        <p><strong>Contribuciones científicas:</strong>Esta investigación proporciona orientación práctica para estudiantes y profesores y hace recomendaciones para mejorar los programas educativos y su alineación con las necesidades de la industria. Además, al enfatizar la importancia de la programación en la creación de soluciones tecnológicas locales, promueve la innovación en Colombia y sienta las bases para futuras investigaciones sobre su impacto en el desarrollo social y económico del país.</p>
+</div>    
+    <!-- Más diapositivas según sea necesario -
+    <!-- Controles de navegación -->
+    <div class="navegacion">
+        <button class="flecha" onclick="anterior()">&#8592;</button>
+        <button class="flecha" onclick="siguiente()">&#8594;</button>
+    </div>
+
+    <!-- JavaScript para controlar la navegación -->
+    <script>
+        let indiceActual = 0;
+        const diapositivas = document.querySelectorAll('.diapositiva');
+
+        function mostrarDiapositiva(indice) {
+            diapositivas.forEach((diapositiva, i) => {
+                diapositiva.classList.remove('activa', 'siguiente', 'anterior');
+                if (i === indice) {
+                    diapositiva.classList.add('activa');
+                } else if (i < indice) {
+                    diapositiva.classList.add('anterior');
+                } else {
+                    diapositiva.classList.add('siguiente');
+                }
+            });
+        }
+
+        function siguiente() {
+            if (indiceActual < diapositivas.length - 1) {
+                indiceActual++;
+                mostrarDiapositiva(indiceActual);
+            }
+        }
+
+        function anterior() {
+            if (indiceActual > 0) {
+                indiceActual--;
+                mostrarDiapositiva(indiceActual);
+            }
+        }
+
+        mostrarDiapositiva(indiceActual);
+    </script>
+</body>
+</html>
